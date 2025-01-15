@@ -28,10 +28,10 @@
         </div>
       </div>
       <ul class="text-white text-2xl lg:text-2xl lg:flex lg:flex-wrap lg:gap-8 max-lg:z-50 max-lg:absolute max-lg:divide-y-2 max-lg:divide-white/10 max-lg:p-8 max-lg:w-full">
-        <li><a href="#acomodacoes" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Acomodações</a></li>
-        <li><a href="#eventos" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Eventos</a></li>
-        <li><a href="#experiencias" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Experiências</a></li>
-        <li><a href="#contato" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Contato</a></li>
+        <li class="animate-slide-in opacity-0"><a href="#acomodacoes" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Acomodações</a></li>
+        <li class="animate-slide-in opacity-0"><a href="#eventos" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Eventos</a></li>
+        <li class="animate-slide-in opacity-0"><a href="#experiencias" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Experiências</a></li>
+        <li class="animate-slide-in opacity-0"><a href="#contato" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Contato</a></li>
       </ul>
     </nav>
     <button id="button-mobile" class="flex items-center gap-2 bg-verde-400 text-verde-900 py-2 px-4 rounded-full justify-self-start lg:hidden">
@@ -261,7 +261,7 @@
       </div>
       <div class="lg:justify-self-end">
         <img src="./img/forest.svg" alt="forest">
-        <p class="text-gray-400">Conecte-se com a natureza</p>
+        <p class="text-gray-400 mt-2">Conecte-se com a natureza</p>
       </div>
     </div>
     <div class="text-gray-400 flex items-center justify-between gap-8 text-sm max-sm:flex-col-reverse">
@@ -276,19 +276,19 @@
   <script>
     const mobileButton = document.getElementById('button-mobile')
     const mobileMenu = document.getElementById('menu-mobile')
-    const closeMenuButton = document.getElementById('button-close-menu')
 
     function showMenu() {
       mobileMenu.classList.toggle('hidden')
       mobileMenu.classList.toggle('flex')
     }
 
-    function closeMenu() {
+    function closeMenu({target}) {
+     if (target.tagName === "A" || target.id === "button-close-menu") {
       mobileMenu.classList.add('hidden')
       mobileMenu.classList.remove('flex')
+     }
     }
 
-    closeMenuButton.addEventListener('click', closeMenu)
     mobileMenu.addEventListener('click', closeMenu)
     mobileButton.addEventListener('click', showMenu)
   </script>
