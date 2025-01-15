@@ -42,7 +42,7 @@
   <main class="container ">
     <div class="relative px-8 pb-8 pt-64 text-white bg-gradient-to-t from-verde-950/80 rounded-2xl overflow-hidden
       max-sm:pt-12 max-sm:px-4">
-      <img class="absolute inset-0 -z-10 size-full object-cover" src="img/floresta.jpg" alt="floresta">
+      <video id="video" class="absolute inset-0 -z-10 size-full object-cover animate-fade-in" src="./img/video_chuva.mp4" muted playsinline autoplay loop width="1280" height="720"></video>
       <div class=" bg-verde-950/60 flex flex-col gap-2 p-4 mb-8 items-start rounded-xl
         sm:items-center sm:inline-flex sm:flex-row sm:gap-8 sm:py-1 sm:pr-1 sm:pl-4 sm:rounded-full sm:bg-verde-950">
         Vagas para dezembro abertas
@@ -274,8 +274,20 @@
     </div>
   </footer>
   <script>
+    const video = document.getElementById('video')
+    const temperatura = document.getElementById('temperatura')
+    const tempo = document.getElementById('tempo')
+    const dia = document.getElementById('dia')
     const mobileButton = document.getElementById('button-mobile')
     const mobileMenu = document.getElementById('menu-mobile')
+
+    const ramdom = Math.floor(Math.random() * 10) + 20
+    temperatura.innerText = `${ramdom}º`
+    tempo.innerText = ramdom < 25 ? `🌧️ ${ramdom + 5}%` : '🌤️'
+    const date = new Date()
+    dia.innerText = date.toLocaleDateString('pt-BR',{weekday: 'long'}).replace('-feira', "")
+
+    video.src = ramdom < 25 ? './img/video_chuva.mp4' : './img/video_sol.mp4'
 
     function showMenu() {
       mobileMenu.classList.toggle('hidden')
