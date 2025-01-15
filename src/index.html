@@ -24,7 +24,7 @@
       <div class="fixed lg:hidden inset-0 bg-verde-950/40 backdrop-blur-md">
         <div class="flex items-center justify-between p-8">
           <img src="./img/forest.svg" alt="forest">
-          <ion-icon name="close-outline" class="text-4xl text-white cursor-pointer hover:bg-white/10 rounded-full p-2"></ion-icon>
+          <ion-icon id="button-close-menu" name="close-outline" class="text-4xl text-white cursor-pointer hover:bg-white/10 rounded-full p-2"></ion-icon>
         </div>
       </div>
       <ul class="text-white text-2xl lg:text-2xl lg:flex lg:flex-wrap lg:gap-8 max-lg:z-50 max-lg:absolute max-lg:divide-y-2 max-lg:divide-white/10 max-lg:p-8 max-lg:w-full">
@@ -273,6 +273,25 @@
       </ul>
     </div>
   </footer>
+  <script>
+    const mobileButton = document.getElementById('button-mobile')
+    const mobileMenu = document.getElementById('menu-mobile')
+    const closeMenuButton = document.getElementById('button-close-menu')
+
+    function showMenu() {
+      mobileMenu.classList.toggle('hidden')
+      mobileMenu.classList.toggle('flex')
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.add('hidden')
+      mobileMenu.classList.remove('flex')
+    }
+
+    closeMenuButton.addEventListener('click', closeMenu)
+    mobileMenu.addEventListener('click', closeMenu)
+    mobileButton.addEventListener('click', showMenu)
+  </script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
