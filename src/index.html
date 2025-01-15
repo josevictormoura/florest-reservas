@@ -20,14 +20,24 @@
   </div>
   <header class="container flex justify-between gap-8 py-8">
     <a href="./"><img src="img/forest.svg" alt="forest"></a>
-    <nav>
-      <ul class="text-white  text-xl flex flex-wrap gap-8">
-        <li><a href="#acomodacoes" class="hover:underline hover:underline-offset-8">Acomodacoes</a></li>
-        <li><a href="#eventos" class="hover:underline hover:underline-offset-8">Eventos</a></li>
-        <li><a href="#experiencias" class="hover:underline hover:underline-offset-8">Experiências</a></li>
-        <li><a href="#contato" class="hover:underline hover:underline-offset-8">Contato</a></li>
+    <nav id="menu-mobile" class="hidden lg:block items-center z-40 max-lg:fixed max-lg:w-full max-lg:inset-0">
+      <div class="fixed lg:hidden inset-0 bg-verde-950/40 backdrop-blur-md">
+        <div class="flex items-center justify-between p-8">
+          <img src="./img/forest.svg" alt="forest">
+          <ion-icon name="close-outline" class="text-4xl text-white cursor-pointer hover:bg-white/10 rounded-full p-2"></ion-icon>
+        </div>
+      </div>
+      <ul class="text-white text-2xl lg:text-2xl lg:flex lg:flex-wrap lg:gap-8 max-lg:z-50 max-lg:absolute max-lg:divide-y-2 max-lg:divide-white/10 max-lg:p-8 max-lg:w-full">
+        <li><a href="#acomodacoes" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Acomodações</a></li>
+        <li><a href="#eventos" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Eventos</a></li>
+        <li><a href="#experiencias" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Experiências</a></li>
+        <li><a href="#contato" class="p-4 block lg:px-0 lg:py-2 max-lg:hover:bg-white/10 lg:hover:underline lg:hover:underline-offset-8">Contato</a></li>
       </ul>
     </nav>
+    <button id="button-mobile" class="flex items-center gap-2 bg-verde-400 text-verde-900 py-2 px-4 rounded-full justify-self-start lg:hidden">
+      Menu
+      <ion-icon name="menu-outline" class="text-verde-800 text-2xl"></ion-icon>
+    </button>
   </header>
   <main class="container ">
     <div class="relative px-8 pb-8 pt-64 text-white bg-gradient-to-t from-verde-950/80 rounded-2xl overflow-hidden
@@ -225,7 +235,7 @@
     </form>
   </section>
   <!-- parceiros -->
-   <section class="container mb-12 sm:mb-16 flex justify-center items-center">
+  <section class="container mb-12 sm:mb-16 flex justify-center items-center">
     <ul class="flex flex-col items-center py-4 max-sm:divide-y-2 divide-verde-900 *:p-4 *:*:max-h-8 sm:flex-row sm:gap-8">
       <li><img src="./img/parceiros/caravan.svg" alt="caravan"></li>
       <li><img src="./img/parceiros/dogs.svg" alt="dogs"></li>
@@ -233,8 +243,8 @@
       <li><img src="./img/parceiros/lescone.svg" alt="lescone.svg"></li>
       <li><img src="./img/parceiros/surfbot.svg" alt="surfbot"></li>
     </ul>
-   </section>
-   <footer class="container pb-8">
+  </section>
+  <footer class="container pb-8">
     <div class=" grid gap-8 lg:grid-cols-2 bg-verde-900 rounded-2xl p-6 sm:p-12 mb-8">
       <div class="flex gap-12 max-sm:flex-col max-sm:gap-4">
         <div>
@@ -262,6 +272,8 @@
         <li><a class="hover:text-verde-300" href="#">Facebook</a></li>
       </ul>
     </div>
-   </footer>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
