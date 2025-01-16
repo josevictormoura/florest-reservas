@@ -11,6 +11,10 @@ module.exports = {
         sm: '1rem',
       },
     },
+    fontFamily:{
+      sans: ['DM Sans', "system-ui", "sans-serif"],
+      sarif: ['DM Serif Text', "Georgia", "serif"]
+    },
     extend: {
       keyframes:{
         slideIn:{
